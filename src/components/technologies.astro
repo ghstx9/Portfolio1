@@ -1,0 +1,62 @@
+---
+const backend = [
+  { name: "C++", icon: "/icons/C++.svg" },
+  { name: "Vite", icon: "/icons/Vite.svg" },
+];
+
+const frontend = [
+  { name: "React", icon: "/icons/React.svg" },
+  { name: "JavaScript", icon: "/icons/JS.svg" },
+  { name: "TailwindCSS", icon: "/icons/Tailwind.svg" },
+  { name: "CSS", icon: "/icons/CSS.svg" },
+  { name: "HTML", icon: "/icons/HTML.svg" },
+  { name: "Astro", icon: "/icons/Astro.svg" },
+];
+
+const tools = [
+  { name: "VS Code", icon: "/icons/VSCode.svg" },
+  { name: "GitHub", icon: "/icons/GitHub.svg" },
+  { name: "NPM", icon: "/icons/NPM.svg" },
+  { name: "Figma", icon: "/icons/Figma.svg" },
+];
+---
+
+<section class="technologies">
+  <h2>Technologies</h2>
+
+  <div class="tech-group">
+    <h3>Back-End</h3>
+    <div class="tech-grid">
+      {backend.map(({ name, icon }) => (
+        <div class="tech-card">
+          <img src={icon} alt={name} />
+          <span>{name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="tech-group">
+    <h3>Front-End</h3>
+    <div class="tech-grid">
+      {frontend.map(({ name, icon }) => (
+        <div class="tech-card">
+          <img src={icon} alt={name} />
+          <span>{name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="tech-group">
+    <h3>Tools</h3>
+    <div class="tech-grid">
+      {tools.map(({ name, icon }) => (
+        <div class="tech-card">
+          <img src={icon} alt={name} />
+          <span>{name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

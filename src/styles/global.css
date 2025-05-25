@@ -19,9 +19,17 @@ body {
 }
 
 /* Intro section */
+.intro {
+  padding: 1.5rem 0 2rem;
+  max-width: 600px;
+}
+
 .intro h1 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.02em;
 }
 
 .intro .highlight {
@@ -29,19 +37,24 @@ body {
 }
 
 .intro h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #a0a0a0;
+  letter-spacing: 0.01em;
 }
 
 .intro p {
   font-size: 1rem;
-  color: #b0b0b0;
+  line-height: 1.6;
+  color: #b8b8b8;
   max-width: 500px;
 }
 
 /* Projects section */
 .projects {
   margin-top: 2rem;
+  padding: 0 1.2rem;
 }
 
 .projects h3 {
@@ -66,4 +79,56 @@ body {
 .project-card h4 {
   margin-bottom: 0.3rem;
   font-size: 1.1rem;
+}
+
+.technologies {
+  padding: 2rem 1.2rem;
+  font-family: 'Inter', sans-serif;
+  color: #d1cccc;
+}
+
+.technologies h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #d1cccc;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.tech-group h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1.5rem 0 0.5rem;
+  color: #a0a0a0;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.tech-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #1f1f1f;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.tech-card:hover {
+  transform: scale(1.02);
+}
+
+.tech-card img {
+  width: 24px;
+  height: 24px;
+}
+
+.tech-card span {
+  font-size: 0.9rem;
+  color: #f0f0f0;
 }
