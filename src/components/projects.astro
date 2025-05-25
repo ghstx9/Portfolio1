@@ -1,24 +1,57 @@
 ---
 // Could be later made dynamic
+const projects = [
+  {
+    title: "AshariQA",
+    description: "An inspired mock of IslamQA with modern UI/UX",
+    status: "completed",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "#" // Replace with actual link when available
+  },
+  {
+    title: "Portfolio Website",
+    description: "The current site you're looking at! Built with Astro and modern web technologies",
+    status: "in-progress",
+    tags: ["Astro", "CSS", "JavaScript"]
+  },
+  {
+    title: "Tasbih/Tally Online",
+    description: "A simple and elegant task manager with drag & drop functionality",
+    status: "planned",
+    tags: ["React", "TypeScript", "Tailwind"]
+  },
+  {
+    title: "Weather Dashboard",
+    description: "Beautiful weather app with location-based forecasts",
+    status: "planned",
+    tags: ["JavaScript", "API", "CSS"]
+  }
+];
 ---
 <section class="projects">
   <h3>Projects</h3>
   <div class="project-list">
-    <div class="project-card">
-      <h4>AshariQA</h4>
-      <p>An inspired mock of IslamQA</p>
-    </div>
-    <div class="project-card">
-      <h4>Coming Soon</h4>
-      <p>Coming Soon</p>
-    </div>
-    <div class="project-card">
-      <h4>Coming Soon</h4>
-      <p>Coming Soon</p>
-    </div>
-    <div class="project-card">
-      <h4>Coming Soon</h4>
-      <p>Coming Soon</p>
-    </div>
+    {projects.map((project) => (
+      <div class="project-card">
+        <div class="project-header">
+          <h4>{project.title}</h4>
+          <span class={`status-badge ${project.status}`}>
+            {project.status === 'completed' ? 'Live' : 
+             project.status === 'in-progress' ? 'In Progress' : 'Planned'}
+          </span>
+        </div>
+        <p>{project.description}</p>
+        <div class="project-tags">
+          {project.tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+        {project.link && (
+          <a href={project.link} class="project-link" target="_blank" rel="noopener noreferrer">
+            View Project →
+          </a>
+        )}
+      </div>
+    ))}
   </div>
 </section>
