@@ -3,6 +3,7 @@ import Intro from '../components/intro.astro';
 import Projects from '../components/projects.astro';
 import Technologies from '../components/technologies.astro';
 import Footer from '../components/footer.astro';
+import ThemeToggle from '../components/theme-toggle.astro';
 import '../styles/global.css';
 ---
 <html lang="en">
@@ -16,6 +17,7 @@ import '../styles/global.css';
     <title>Ricky's Astro</title>
   </head>
   <body>
+    <ThemeToggle />
     <Intro />
     <Projects />
     <Technologies />
