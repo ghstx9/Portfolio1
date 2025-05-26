@@ -1,0 +1,131 @@
+---
+// Contact component
+const contacts = [
+  {
+    platform: "Email",
+    value: "rickyaldiansyah92@gmail.com",
+    link: "mailto:rickyaldiansyah92@gmail.com",
+    icon: "/icons/Gmail.svg"
+  },
+  {
+    platform: "GitHub",
+    value: "@ghstx9",
+    link: "https://github.com/ghstx9",
+    icon: "/icons/GitHub.svg",
+    lightIcon: "/icons/GitHub-light.svg"
+  },
+  {
+    platform: "Steam",
+    value: "GhostX9",
+    link: "https://steamcommunity.com/id/GhostX9/",
+    icon: "/icons/Steam.svg"
+  },
+  {
+    platform: "Discord",
+    value: "themysticalisticman",
+    link: "#",
+    icon: "/icons/Discord.svg",
+    copyable: true
+  }
+];
+---
+
+<section class="contact">
+  <h3>Contact</h3>
+  <p class="contact-description">
+    Below are the ways to contact me, feel free to reach out :)
+  </p>
+  
+  <div class="contact-list">
+    {contacts.map(({ platform, value, link, icon, lightIcon, copyable }) => (
+      <div class="contact-card" data-copyable={copyable ? "true" : "false"}>
+        <div class="contact-info">
+          <div class="contact-icon">
+            {lightIcon ? (
+              <>
+                <img src={icon} alt={platform} class="dark-mode-icon" />
+                <img src={lightIcon} alt={platform} class="light-mode-icon" />
+              </>
+            ) : (
+              <img src={icon} alt={platform} />
+            )}
+          </div>
+          <div class="contact-details">
+            <span class="contact-platform">{platform}</span>
+            <span class="contact-value">{value}</span>
+          </div>
+        </div>
+        
+        {copyable ? (
+          <button class="contact-action copy-btn" data-copy={value}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+            </svg>
+          </button>
+        ) : (
+          <a href={link} class="contact-action link-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15,3 21,3 21,9"/>
+              <line x1="10" x2="21" y1="14" y2="3"/>
+            </svg>
+          </a>
+        )}
+      </div>
+    ))}
+  </div>
+  
+  <div class="contact-cta">
+    <p>Currently <span class="availability-status">available</span> for new opportunities</p>
+  </div>
+</section>
+
+<script>
+  // Copy to clipboard functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    copyButtons.forEach(button => {
+      button.addEventListener('click', async function(event) {
+        const clickedButton = event.target as HTMLButtonElement;
+        const textToCopy = clickedButton.getAttribute('data-copy');
+        
+        if (!textToCopy) return;
+        
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          
+          // Visual feedback
+          const originalContent = clickedButton.innerHTML;
+          clickedButton.innerHTML = 'Copied!';
+          clickedButton.style.color = 'var(--highlight)';
+          
+          setTimeout(() => {
+            clickedButton.innerHTML = originalContent;
+            clickedButton.style.color = '';
+          }, 2000);
+          
+        } catch (err) {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = textToCopy;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          
+          // Visual feedback for fallback
+          const originalContent = clickedButton.innerHTML;
+          clickedButton.innerHTML = 'Copied!';
+          clickedButton.style.color = 'var(--highlight)';
+          
+          setTimeout(() => {
+            clickedButton.innerHTML = originalContent;
+            clickedButton.style.color = '';
+          }, 2000);
+        }
+      });
+    });
+  });
+</script>
