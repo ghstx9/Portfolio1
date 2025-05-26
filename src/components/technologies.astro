@@ -15,7 +15,11 @@ const frontend = [
 
 const tools = [
   { name: "VS Code", icon: "/icons/VSCode.svg" },
-  { name: "GitHub", icon: "/icons/GitHub.svg" },
+  { 
+    name: "GitHub", 
+    icon: "/icons/GitHub.svg", // Dark mode icon
+    lightIcon: "/icons/GitHub-light.svg" // Light mode icon (add this)
+  },
   { name: "NPM", icon: "/icons/NPM.svg" },
   { name: "Figma", icon: "/icons/Figma.svg" },
 ];
@@ -49,14 +53,21 @@ const tools = [
   </div>
 
   <div class="tech-group">
-    <h3>Tools</h3>
-    <div class="tech-grid">
-      {tools.map(({ name, icon }) => (
-        <div class="tech-card">
+  <h3>Tools</h3>
+  <div class="tech-grid">
+    {tools.map(({ name, icon, lightIcon }) => (
+      <div class="tech-card">
+        {lightIcon ? (
+          <>
+            <img src={icon} alt={name} class="dark-mode-icon" />
+            <img src={lightIcon} alt={name} class="light-mode-icon" />
+          </>
+        ) : (
           <img src={icon} alt={name} />
-          <span>{name}</span>
-        </div>
-      ))}
-    </div>
+        )}
+        <span>{name}</span>
+      </div>
+    ))}
   </div>
+</div>
 </section>
