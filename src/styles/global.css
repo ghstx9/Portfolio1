@@ -154,11 +154,19 @@ body {
   letter-spacing: 0.01em;
 }
 
+[data-theme="light"] .intro h2 {
+  color: #4b5563; 
+}
+
 .intro p {
   font-size: 1rem;
   line-height: 1.6;
   color: #b8b8b8;
   max-width: 500px;
+}
+
+[data-theme="light"] .intro p {
+  color: #374151; 
 }
 
 /* Projects section */
