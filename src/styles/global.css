@@ -329,7 +329,7 @@ body {
 .technologies h2 {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   color: var(--text);
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
@@ -450,6 +450,14 @@ body {
   max-width: 500px;
 }
 
+.technologies-description {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
 .contact-list {
   display: flex;
   flex-direction: column;
@@ -563,3 +571,273 @@ body {
   color: var(--highlight);
   font-weight: 500;
 }
+
+/* Desktop Breakpoints */
+@media (min-width: 768px) {
+  body {
+    padding: 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .intro {
+    padding: 3rem 0 4rem;
+    max-width: 800px;
+  }
+
+  .intro h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro p {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  .projects {
+    margin-top: 3rem;
+    padding: 0 2rem;
+  }
+
+  .projects h3 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 2rem;
+    max-width: 1000px;
+  }
+
+  .project-card {
+    padding: 2rem; 
+    border-radius: 16px;
+    min-height: 240px; 
+    max-width: 450px;
+  }
+
+  .project-card h4 {
+    font-size: 1.4rem;
+  }
+
+  .project-card p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .technologies {
+    padding-top: 3rem;
+    padding-left: 0;
+    padding-right: 2rem;
+    padding-bottom: 0;
+  }
+
+  .technologies h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .tech-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .tech-group h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .tech-card {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+  }
+
+  .tech-card img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tech-card span {
+    font-size: 1rem;
+  }
+
+  .contact {
+    margin-top: 3rem;
+    padding: 0 2rem;
+  }
+
+  .contact h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+
+  .technologies-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+  .contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-card {
+    padding: 1.25rem;
+  }
+
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-platform {
+    font-size: 0.95rem;
+  }
+
+  .contact-value {
+    font-size: 0.85rem;
+  }
+
+  .contact-cta {
+    padding: 1.5rem;
+    max-width: 600px;
+    margin-top: 1.5rem;
+  }
+
+  .contact-cta p {
+    font-size: 1rem;
+  }
+
+  .footer {
+    margin-top: 4rem;
+    padding: 2rem;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+
+  .footer .built-with {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 3rem 6rem;
+  }
+
+  .intro {
+    padding: 4rem 0 5rem;
+  }
+
+  .intro h1 {
+    font-size: 4rem;
+  }
+
+  .intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .intro p {
+    font-size: 1.2rem;
+  }
+
+  .projects {
+    margin-top: 3rem;
+    padding-left: 0;
+    padding-right: 4rem;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 2.5rem;
+    max-width: 1100px; 
+  }
+
+  .project-card {
+    padding: 2.25rem; 
+    min-height: 260px;
+    max-width: 500px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .contact-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    max-width: 1400px;
+    padding: 4rem 8rem;
+  }
+
+  .intro {
+    max-width: 900px;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 3rem;
+    max-width: 1200px;
+  }
+
+  .project-card {
+    min-height: 260px;
+    max-width: 550px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  [data-theme="dark"] .project-card:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  }
+
+  .tech-card:hover {
+    transform: scale(1.05);
+  }
+
+  .contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="dark"] .contact-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
