@@ -175,9 +175,17 @@ body {
   padding: 0 1.2rem;
 }
 
+.projects-description {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
 .projects h3 {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
 }
@@ -605,9 +613,15 @@ body {
     padding: 0 2rem;
   }
 
+  .projects-description {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+  }
+
   .projects h3 {
     font-size: 1.6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   .project-list {
@@ -720,9 +734,11 @@ body {
   }
 
   .contact-cta {
-    padding: 1.5rem;
-    max-width: 600px;
-    margin-top: 1.5rem;
+    grid-column: 1 / -1; 
+    justify-self: center; 
+    width: 100%; 
+    max-width: 500px; 
+    margin: 1.5rem auto 0; 
   }
 
   .contact-cta p {
