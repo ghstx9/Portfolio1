@@ -34,6 +34,29 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Header section with gradient background */
+.header-section {
+  /* Gradient background inspired from sustainable.dev */
+  background: linear-gradient(135deg, #FFB347 0%, #FF6B9D 40%, #8B5CF6 70%, #3B82F6 100%);
+
+  /* Mobile-first rounded corners */
+  border-radius: 16px;
+  margin: 0 0.5rem 2rem 0.5rem;
+  
+  /* Add padding to contain the intro and theme toggle */
+  padding: 1rem;
+  padding-bottom: 2rem;
+  position: relative;
+
+  /* Smooth transition for theme changes */
+  transition: background 0.3s ease;
+}
+
+[data-theme="light"] .header-section {
+  /* Warmer Radiant gradient for light mode */
+  background: linear-gradient(135deg, #FEF3C7 0%, #FBBF24 25%, #F472B6 60%, #A78BFA 100%);
+}
+
 /* Theme Toggle */
 .theme-toggle-container {
   position: fixed;
@@ -43,8 +66,12 @@ body {
 }
 
 .themeToggle {
-  color: var(--text);
+  color: #f3ebeb;
   width: 3em;
+}
+
+[data-theme="light"] .themeToggle {
+  color: #1a1a1a;
 }
 
 .st-sunMoonThemeToggleBtn {
@@ -132,22 +159,11 @@ body {
 .intro {
   padding: 1.5rem 0 2rem;
   max-width: 600px;
-  position: relative;
-  
-  /* Gradient background inspired from sustainable.dev */
-  background: linear-gradient(135deg, #FFB347 0%, #FF6B9D 40%, #8B5CF6 70%, #3B82F6 100%);
-  
-  /* Make it responsive and add some styling */
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
   margin: 0 auto;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="light"] .intro {
-  /* Warmer Radiant gradient for light mode */
-  background: linear-gradient(135deg, #FEF3C7 0%, #FBBF24 25%, #F472B6 60%, #A78BFA 100%);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .intro h1 {
@@ -159,15 +175,7 @@ body {
   color: #1a1a1a;
 }
 
-[data-theme="light"] .intro h1 {
-  color: #1a1a1a;
-}
-
 .intro .highlight {
-  color: #1a1a1a;
-}
-
-[data-theme="light"] .intro .highlight {
   color: #1a1a1a;
 }
 
@@ -179,10 +187,6 @@ body {
   letter-spacing: 0.01em;
 }
 
-[data-theme="light"] .intro h2 {
-  color: #1a1a1a;
-}
-
 .intro p {
   font-size: 1rem;
   line-height: 1.6;
@@ -190,15 +194,10 @@ body {
   max-width: 500px;
 }
 
-[data-theme="light"] .intro p {
-  color: #1a1a1a;
-}
-
-
 /* Projects section */
 .projects {
   margin-top: 2rem;
-  padding: 0 1.2rem;
+  padding: 0 0.2rem;
 }
 
 .projects-description {
@@ -257,7 +256,7 @@ body {
 }
 
 [data-theme="light"] .project-card h4 {
-  color: #1a1a1a; /* Dark text for light mode */
+  color: #1a1a1a; 
 }
 
 .project-card p {
@@ -614,6 +613,13 @@ body {
     margin: 0 auto;
   }
 
+  .header-section {
+    border-radius: 20px;
+    margin: 0 0 3rem 0;
+    padding: 2rem;
+    padding-bottom: 3rem;
+  }
+
   .intro {
     padding: 3rem 3rem 4rem;
     max-width: 800px;
@@ -791,6 +797,12 @@ body {
     padding: 3rem 6rem;
   }
 
+  .header-section {
+    border-radius: 24px;
+    padding: 3rem;
+    padding-bottom: 4rem;
+  }
+
   .intro {
     padding: 4rem 4rem 5rem;
     border-radius: 24px;
@@ -849,6 +861,12 @@ body {
   body {
     max-width: 1400px;
     padding: 4rem 8rem;
+  }
+
+  .header-section {
+    border-radius: 28px;
+    padding: 4rem;
+    padding-bottom: 5rem;
   }
 
   .intro {
