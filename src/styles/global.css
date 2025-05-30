@@ -381,31 +381,89 @@ body {
 .tag {
   font-size: 0.8rem;
   padding: 0.25rem 0.6rem;
-  background: rgba(255, 238, 88, 0.1);
-  color: var(--highlight);
+  background: rgba(99, 102, 241, 0.15); /* Soft indigo background */
+  color: #a5b4fc; /* Light indigo text */
   border-radius: 6px;
-  border: 1px solid rgba(255, 238, 88, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.25);
 }
 
 [data-theme="light"] .tag {
-  background: rgba(245, 158, 11, 0.1);
-  color: #d97706;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1; /* Darker indigo for light mode */
+  border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
+/* Modern Project Link */
 .project-link {
-  color: var(--highlight);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  transition: color 0.2s ease;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, rgba(255, 238, 88, 0.1) 0%, rgba(255, 238, 88, 0.05) 100%);
+  color: #ffee58;
+  text-decoration: none;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 238, 88, 0.2);
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+}
+
+.project-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 238, 88, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.project-link:hover::before {
+  left: 100%;
 }
 
 .project-link:hover {
+  transform: translateY(-2px) translateX(2px);
+  background: linear-gradient(135deg, rgba(255, 238, 88, 0.15) 0%, rgba(255, 238, 88, 0.08) 100%);
+  border-color: rgba(255, 238, 88, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 238, 88, 0.15);
   color: #fff;
+}
+
+.project-link:active {
+  transform: translateY(-1px) translateX(1px);
+}
+
+.project-link .arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+}
+
+.project-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Light theme adjustments for project link */
+[data-theme="light"] .project-link {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="light"] .project-link::before {
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+}
+
+[data-theme="light"] .project-link:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+  color: #1a1a1a;
 }
 
 .technologies {
