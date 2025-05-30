@@ -21,4 +21,4 @@ Built with Astro and CSS.
    npm run dev 
    ```
 
-4. Open your browser and navigate to `http://localhost:4321/`
+4. Open your browser and navigate to `http://localhost:4321/` or whatever local your terminal said.
