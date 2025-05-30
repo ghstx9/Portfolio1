@@ -1,8 +1,7 @@
 # Ricky's Portfolio
 
-Still in development (Currently still developing the mobile layout)
-
-Built with Astro and CSS.
+A simple portfolio that I made with Astro. 
+Inspired from : https://amirdev.nl/ & https://www.janasundar.dev/
 
 ## Installation
 
