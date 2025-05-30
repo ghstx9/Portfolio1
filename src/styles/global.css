@@ -706,7 +706,7 @@ body {
 }
 
 .availability-status {
-  color: var(--highlight);
+  color: #6f85f6;
   font-weight: 500;
 }
 
