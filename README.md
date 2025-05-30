@@ -1,6 +1,6 @@
 # Ricky's Portfolio
 
-A simple portfolio that I made with Astro. 
+A simple portfolio that I made with Astro.  
 Inspired from : https://amirdev.nl/ & https://www.janasundar.dev/  
 
 ## Installation
