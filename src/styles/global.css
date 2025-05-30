@@ -701,8 +701,10 @@ body {
   }
 
   .hero-content {
-    padding: 6rem 3rem;
+    padding: 4rem 3rem 6rem; 
     max-width: 800px;
+    justify-content: flex-start; 
+    padding-top: 8vh; 
   }
   
   .hero-greeting {
@@ -914,8 +916,9 @@ body {
   }
 
   .hero-content {
-    padding: 8rem 4rem;
+    padding: 6rem 4rem 8rem; 
     max-width: 900px;
+    padding-top: 12vh; 
   }
   
   .hero-title {
@@ -981,8 +984,9 @@ body {
   }
   
   .hero-content {
-    padding: 10rem 6rem;
+    padding: 8rem 6rem 10rem;
     max-width: 1000px;
+    padding-top: 15vh; 
   }
   
   .hero-title {
